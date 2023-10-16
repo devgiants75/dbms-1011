@@ -55,4 +55,25 @@ Instructor: "Dr. Smith"
 5.
 Students 테이블에서 Major가 "Computer Science"인 학생들의 전체 정보를 조회하는 SQL문을 작성하세요.
 
+### 데이터 추가 ###
+-- 학생 1
+INSERT INTO Students (StudentID, FirstName, LastName, Major, Email, Phone) 
+VALUES (102, 'Jane', 'Smith', 'Biology', 'janesmith@email.com', '123-456-7891');
+
+-- 학생 2
+INSERT INTO Students (StudentID, FirstName, LastName, Major, Email, Phone) 
+VALUES (103, 'Robert', 'Johnson', 'Physics', 'robertj@email.com', '123-456-7892');
+
+-- 학생 3
+INSERT INTO Students (StudentID, FirstName, LastName, Major, Email, Phone) 
+VALUES (104, 'Emily', 'Brown', 'Mathematics', 'emilyb@email.com', '123-456-7893');
+
+-- 학생 4
+INSERT INTO Students (StudentID, FirstName, LastName, Major, Email, Phone) 
+VALUES (105, 'William', 'Taylor', 'History', 'williamt@email.com', '123-456-7894');
+
+-- 학생 5
+INSERT INTO Students (StudentID, FirstName, LastName, Major, Email, Phone) 
+VALUES (106, 'Lucy', 'Davis', 'English Literature', 'lucyd@email.com', '123-456-7895');
+
 */
