@@ -23,6 +23,36 @@ Instructor: 강좌의 지도 교수
 	(문자열, 최대 길이 50, NULL 허용)
 */
 
-/*
+/*member
 4. Students 테이블에서 Age 칼럼을 삭제 SQL 작성
+*/
+
+/*
+1.
+Students 테이블에 다음 학생의 정보를 추가하세요.
+
+StudentID: 101
+FirstName: "John"
+LastName: "Doe"
+Major: "Computer Science"
+Email: "johndoe@email.com"
+Phone: "123-456-7890"
+
+2.
+Students 테이블에서 StudentID가 101인 학생의 
+Major를 "Electrical Engineering"로 변경하는 SQL문을 작성하세요.
+
+3. 
+Students 테이블에서 StudentID가 101인 학생의 정보를 삭제하는 SQL문을 작성하세요.
+
+4. 
+Courses 테이블에 다음 강좌 정보를 추가하세요.
+
+CourseID: 501
+CourseName: "Introduction to AI"
+Instructor: "Dr. Smith"
+
+5.
+Students 테이블에서 Major가 "Computer Science"인 학생들의 전체 정보를 조회하는 SQL문을 작성하세요.
+
 */
