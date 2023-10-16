@@ -1,6 +1,7 @@
 ### 데이터베이스 DML 문법 실습 ###
 # z_practice
 
+use practice;
 /*
 1. Students 테이블에 phone라는 칼럼을 추가 
 데이터 타입: VARCHAR
@@ -26,6 +27,17 @@ Instructor: 강좌의 지도 교수
 /*member
 4. Students 테이블에서 Age 칼럼을 삭제 SQL 작성
 */
+ALTER TABLE Students ADD Phone VARCHAR(15) NULL;
+
+ALTER TABLE Students MODIFY COLUMN Major VARCHAR(150);
+
+CREATE TABLE Courses (
+    CourseID INT PRIMARY KEY NOT NULL,
+    CourseName VARCHAR(100) NOT NULL,
+    Instructor VARCHAR(50) NULL
+);
+
+ALTER TABLE Students DROP COLUMN Age;
 
 -- DML 문법 실습
 /*
