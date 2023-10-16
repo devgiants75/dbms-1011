@@ -27,6 +27,7 @@ Instructor: 강좌의 지도 교수
 4. Students 테이블에서 Age 칼럼을 삭제 SQL 작성
 */
 
+-- DML 문법 실습
 /*
 1.
 Students 테이블에 다음 학생의 정보를 추가하세요.
