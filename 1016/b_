@@ -21,6 +21,8 @@ use company;
 select employee_age, employee_name
 from human_resources;
 
+
+
 -- 2. insert
 -- : 테이블에 새로운 데이터를 삽입하기 위한 SQL 명령어
 -- 기본 구조
@@ -57,6 +59,12 @@ set employee_score = 80;
 
 -- 전체 테이블 데이터 삭제의 경우 where 조건식을 생략 작성
 delete from `human_resources`;
+
+-- safe mode
+-- 표준 SQL에서 사용자가 실수로 많은 데이터를 
+-- 변경하거나 삭제하는 것을 방지하는 기능
+-- Edit > Prefereces > SQL Editor
+-- Safe Mode 제거
 
 ### DBMS MySQL Workbench 백틱, 따옴표 사용법 ###
 -- 백틱(`)

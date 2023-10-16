@@ -46,9 +46,9 @@ create table buy
 -- 각 테이블에 데이터 삽입
 -- 회원 테이블 데이터 삽입
 insert into member 
-values('TWC', '트와이스', 9, '서울', '02', '11111111', 167, '2015.10.19');
+values('TWC', '트와이스', 9, '서울', '02', '11111111', 167, '2015-10-19');
 insert into member 
-values('BLK', '블랙핑크', 4, '경남', '055', '22222222', 163, '2016.08.08');
+values('BLK', '블랙핑크', 4, '경남', '055', '22222222', 163, '2016-08-08');
 insert into member 
 values('WMN', '여자친구', 6, '경기', '031', '33333333', 166, '2015.01.15');
 insert into member 
@@ -66,6 +66,7 @@ VALUES('SPC', '우주소녀', 13, '서울', '02', '88888888', 162, '2016.02.25')
 insert into member 
 VALUES('MMU', '마마무', 4, '전남', '061', '99999999', 165, '2014.06.19');
 
+-- 구매 테이블
 INSERT INTO buy VALUES(NULL, 'BLK', '지갑', NULL, 30, 2);
 INSERT INTO buy VALUES(NULL, 'BLK', '맥북프로', '디지털', 1000, 1);
 INSERT INTO buy VALUES(NULL, 'APN', '아이폰', '디지털', 200, 1);
