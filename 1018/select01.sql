@@ -85,3 +85,41 @@ select *
 select *
 	from market_db.member
     where phone1 is null;    
+    
+# 6. 날짜, 시간 조회
+select * 
+	from member 
+    where debut_date = '2019-02-12';
+    
+# 특정 시간 기준 이후의 데이터 조회 (컬럼명 > 특정시간)
+select *
+	from market_db.member
+    where debut_date > '2016-01-01';
+    
+# 특정 시간 사이의 데이터 조회: between ~ and 사용
+select *
+	from member
+    where debut_date 
+		between '2015-01-16' and '2016-12-31';
+
+# 날짜나 시간의 특정 부분과 일치하는 데이터 조회
+
+# 연도 일치: year()
+# 2015년의 모든 데이터 조회
+select *
+	from member
+    where year(debut_date) = 2015;
+
+# 월 일치: month()
+# 일 일치: day()
+
+# 시간 일치: hour()
+    
+# 현재 날짜나 현재 시간을 기준으로 조회
+# : curdate(), now()
+
+# 현재 이전의 데뷔 일자 조회
+select *
+	from member
+    where debut_date < curdate();
+    

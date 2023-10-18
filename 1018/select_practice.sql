@@ -31,3 +31,19 @@ update students set age = 21 where studentId = 106;
 # 5. Students 테이블에서 이름이 J로 시작하는 학생들의 정보를 조회
 
 # 6. Students 테이블에서 나이(Age) 정보가 없는 학생들의 정보를 조회
+
+---
+use practice;
+select * from students;
+
+# 일부 학생의 전공을 중복되게 설정
+# StudentID가 102, 104에 해당하는 데이터의 전공을 Computer Science
+# StudentId가 103에 해당하는 데이터의 전공을 History
+
+# 일부 학생의 성을 중복되게 설정
+# StudentID가 102 - Doe, 106 - Taylor
+
+# 일부 학생의 이메일 도메인을 다르게 설정
+# StudentID가 102 - 'janesmith@naver.com
+# StudentID가 103 - robertj@naver.com
+# StudentID가 104 - emilyb@naver.com
