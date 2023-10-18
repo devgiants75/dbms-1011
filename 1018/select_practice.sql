@@ -18,21 +18,23 @@ update students set age = 21 where studentId = 106;
 
 # 1. Students 테이블에서 전공(Major)이 
 # 'Computer Science'인 학생들의 정보를 조회
-
 # 2. Students 테이블에서 전공이 'Computer Science'이거나 
 # 'Biology'인 학생들의 정보를 조회
-
 # 3. Students 테이블에서 전공이 
 # 'Physics', 'Mathematics' 또는 'History'인 
 # 학생들의 정보를 조회
-
 # 4. Students 테이블에서 나이가 20세에서 23세 사이인 학생들의 정보를 조회
-
 # 5. Students 테이블에서 이름이 J로 시작하는 학생들의 정보를 조회
-
 # 6. Students 테이블에서 나이(Age) 정보가 없는 학생들의 정보를 조회
 
----
+--
+SELECT * FROM Students WHERE Major = 'Computer Science';
+SELECT * FROM Students WHERE Major = 'Computer Science' OR Major = 'Biology';
+SELECT * FROM Students WHERE Major IN ('Physics', 'Mathematics', 'History');
+SELECT * FROM Students WHERE Age BETWEEN 20 AND 23;
+SELECT * FROM Students WHERE Email LIKE '%email.com';
+SELECT * FROM Students WHERE Age IS NULL;
+--
 use practice;
 select * from students;
 
