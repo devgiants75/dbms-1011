@@ -74,9 +74,14 @@ select *
 select * 
 	from member
     where mem_name like '__핑크';
+
+# 5. is null 연산자 / is not null 연산자
+# : 값이 null인 경우에 참 / 값이 null이 아닌 경우에 참
+
+select *
+	from market_db.member
+    where phone1 is not null;
     
-    
-
-
-
-
+select *
+	from market_db.member
+    where phone1 is null;    
