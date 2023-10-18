@@ -40,12 +40,28 @@ select * from students;
 
 # 일부 학생의 전공을 중복되게 설정
 # StudentID가 102, 104에 해당하는 데이터의 전공을 Computer Science
+# in(): 문자열, 숫자 모두 사용 가능
+update students set major = 'Computer Science' 
+	where studentID in (102, 104);
+
 # StudentId가 103에 해당하는 데이터의 전공을 History
+UPDATE students SET Major = 'History' WHERE StudentID = 103;
 
 # 일부 학생의 성을 중복되게 설정
 # StudentID가 102 - Doe, 106 - Taylor
+update students set LastName = 'Deo' 
+	where studentID = 102;
+    
+UPDATE Students SET LastName = 'Taylor' 
+	WHERE StudentID = 106;
 
 # 일부 학생의 이메일 도메인을 다르게 설정
 # StudentID가 102 - 'janesmith@naver.com
 # StudentID가 103 - robertj@naver.com
 # StudentID가 104 - emilyb@naver.com
+UPDATE Students SET Email = 'janesmith@yahoo.com' 
+	WHERE StudentID = 102;
+UPDATE Students SET Email = 'robertj@hotmail.com' 
+	WHERE StudentID = 103;
+UPDATE Students SET Email = 'emilyb@outlook.com' 
+	WHERE StudentID = 104;
