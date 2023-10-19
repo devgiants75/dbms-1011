@@ -59,3 +59,24 @@ select *
 select distinct addr 
 	from member
     order by addr;
+    
+-- 실습 예제
+use practice;
+# Students 테이블에서 중복없이 사용되는 
+# 모든 전공을 알파벳 오름차순 나열
+select distinct major
+	from students
+    order by major asc;
+
+# Students 테이블에서 '서로 다른 이메일 도메인을 사용'하는 학생 중
+# 이메일을 알파벳 오름차순 정렬, 상위 5개의 이메일만 조회
+select distinct email
+	from students
+    order by email asc
+    limit 5;
+
+# 전공 - 오름차순 정렬
+# , 같은 전공을 가진 학생들 사이에서는 나이가 적은 순으로 나열
+select *
+	from students
+    order by major asc, age asc;
