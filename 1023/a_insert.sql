@@ -54,6 +54,9 @@ insert into practice02 values (null, '재남', 35);
 -- : 앞에 @@가 붙는 것이 특징
 -- : 사용자가 원하는 대로 변경 가능
 
+-- : 해당 시스템 변수 설정은 일반적으로 
+--   MySQL 서버 세션이 지속되는 동안만 유지
+
 create table practice03 (
 	toy_id int auto_increment primary key,
     toy_name char(4),
@@ -83,14 +86,25 @@ values (null, '토마스', 20)
 -- insert into 테이블명 (열이름1, 열이름2, ...)
 --   select문;
 
-create table practice04 (
-	toy_id int auto_increment primary key,
-    toy_name char(4),
-    age int
-);
+-- world 데이터베이스의 city 테이블의 개수를 조회
+select count(*) from world.city;
 
-insert into practice04 values (null, 'a', 1);
-insert into practice04 values (null, 'a', 1);
-insert into practice04 values (null, 'a', 1);
+-- 테이블의 구조 확인: desc(describe: 묘사하다)
+-- : create table의 구조 파악
+desc world.city;
 
-select * from practice04;
+-- 테이블의 데이터 확인 (제한 - 상위 5개)
+select * from world.city limit 5;
+
+-- world 데이터베이스 city 테이블의 
+-- 도시 이름(Name)과 인구(Population) 데이터 추출
+
+use market_db;
+create table city_popul 
+(city_name char(35), population int);
+
+insert into city_popul
+	select Name, Population from world.city;
+
+select * from city_popul;
+select count(*) from city_popul;
