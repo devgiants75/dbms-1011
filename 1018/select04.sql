@@ -44,11 +44,26 @@ select mem_id, avg(amount)
 select count(phone1) "연락처가 있는 회원" from member;
 
 # Students 테이블에서 
-# 각 학생의 성(LastName)을 중복 없이 조회하되
-# , 가장 많이 등장하는 성부터 나열
+# 각 학생의 성(LastName)을 중복 없이 조회하되 - distinct
+# , 가장 많이 등장하는 성부터 나열 - count(내림차순)
 # : 서브쿼리(from)
 
 use practice;
-select lastName
-from ()
-order by count(*) desc;
+
+# 1. 서브 쿼리
+select LastName, count(*) as cnt
+	from students
+    group by LastName; -- LastName 컬럼을 기준으로 그룹화
+
+# 2. 메인 쿼리
+select LastName
+	from (
+		select LastName, count(*) as cnt
+			from students
+			group by LastName
+    ) as SubQuery -- 서브쿼리를 '일반 테이블'처럼 사용
+    order by cnt desc;
+
+-- students 테이블의 LastName을 수정하는 SQL문
+update students set LastName = 'Deo' where studentID = 101;
+update students set LastName = 'Deo' where studentID = 103;

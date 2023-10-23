@@ -32,7 +32,7 @@ SELECT * FROM Students WHERE Major = 'Computer Science';
 SELECT * FROM Students WHERE Major = 'Computer Science' OR Major = 'Biology';
 SELECT * FROM Students WHERE Major IN ('Physics', 'Mathematics', 'History');
 SELECT * FROM Students WHERE Age BETWEEN 20 AND 23;
-SELECT * FROM Students WHERE Email LIKE '%email.com';
+SELECT * FROM Students WHERE Email LIKE 'J%';
 SELECT * FROM Students WHERE Age IS NULL;
 --
 use practice;
