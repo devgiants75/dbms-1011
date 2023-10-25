@@ -42,4 +42,3 @@ UPDATE students SET birth_date = '1999-08-13' WHERE StudentID = 103;
 UPDATE students SET birth_date = '2004-11-05' WHERE StudentID = 104;
 UPDATE students SET birth_date = '2001-12-30' WHERE StudentID = 105;
 UPDATE students SET birth_date = '2003-03-27' WHERE StudentID = 106;
-
