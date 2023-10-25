@@ -50,11 +50,22 @@ from buy B
 # 내부 조인 활용
 -- '전체 회원'의 아이디, 이름, 구매한 제품, 주소 출력
 -- 결과는 회원 아이디 순으로 정렬
+select M.mem_id, M.mem_name, B.prod_name, M.addr
+from buy B
+	inner join member M
+    on B.mem_id = M.mem_id
+order by M.mem_id;
 
+-- 내부 조인의 경우 두 테이블에 데이터(열 목록)가 모두 
+-- 있는 내용만 조인되는 방식
 
+-- 양쪽 테이블 중에서 한곳이라도 내용이 있을 때
+-- 조인을 하기 위해서는 >> 외부 조인 사용
 
-
-
-
-
-
+-- 해당 사이트에서 
+-- 한 번이라도 구매한 기록이 있는 회원에게 쿠폰 발송
+select distinct M.mem_id, M.mem_name, M.addr
+from buy B
+	inner join member M
+    on B.mem_id = M.mem_id
+order by M.mem_id;
