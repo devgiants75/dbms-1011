@@ -47,3 +47,54 @@ ID가 2인 학생의 레코드를 삭제 이 작업이 완료된 후
 ‘Mathematics’ 과목의 레코드를 삭제 이 작업이 완료된 후 
  ‘Enrollment’ 테이블의 내용을 확인
 */
+
+use naver_db;
+-- ‘Students’ 테이블 생성
+CREATE TABLE Students (
+    ID INT PRIMARY KEY,
+    Name VARCHAR(100)
+);
+
+-- ‘Courses’ 테이블 생성
+CREATE TABLE Courses (
+    CourseID INT PRIMARY KEY,
+    CourseName VARCHAR(100)
+);
+
+-- ‘Enrollment’ 테이블 생성
+CREATE TABLE Enrollment (
+    StudentID INT,
+    CourseID INT,
+    FOREIGN KEY (StudentID) REFERENCES Students(ID) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+-- ‘Students’ 테이블에 데이터 삽입
+INSERT INTO Students (ID, Name) VALUES (1, 'John Doe');
+INSERT INTO Students (ID, Name) VALUES (2, 'Jane Doe');
+
+-- ‘Courses’ 테이블에 데이터 삽입
+INSERT INTO Courses (CourseID, CourseName) VALUES (101, 'Mathematics');
+INSERT INTO Courses (CourseID, CourseName) VALUES (102, 'English');
+
+-- ‘Enrollment’ 테이블에 데이터 삽입
+INSERT INTO Enrollment (StudentID, CourseID) VALUES (1, 101);
+INSERT INTO Enrollment (StudentID, CourseID) VALUES (2, 102);
+
+-- ID가 1인 학생의 이름을 ‘John Smith’로 변경
+UPDATE Students SET Name = 'John Smith' WHERE ID = 1;
+
+-- ‘English’ 과목의 이름을 ‘Literature’로 변경
+UPDATE Courses SET CourseName = 'Literature' WHERE CourseName = 'English';
+
+-- ID가 2인 학생의 레코드를 삭제
+DELETE FROM Students WHERE ID = 2;
+
+-- 이 작업이 완료된 후 ‘Enrollment’ 테이블의 내용을 확인
+SELECT * FROM Enrollment;
+
+-- ‘Mathematics’ 과목의 레코드를 삭제
+DELETE FROM Courses WHERE CourseName = 'Mathematics';
+
+-- 이 작업이 완료된 후 ‘Enrollment’ 테이블의 내용을 확인
+SELECT * FROM Enrollment;
