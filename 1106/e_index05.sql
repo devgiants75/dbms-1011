@@ -107,3 +107,54 @@ select mem_id, mem_name, addr from member
 
 # where 절에 열 이름이 들어 있어야
 # 인덱스를 사용 할 수 있다.
+
+### 1107 수업 본 ###
+use market_db;
+# 인덱스를 사용하지 않을 때
+# 인덱스 O && where절에 열 이름이 나와도 인덱스를 사용하지 않는 경우
+
+# 인원 수가 1명 이상인 회원 조회
+select mem_name, mem_number
+	from member
+    where mem_number >= 1;
+    
+# 인덱스가 있더라도 mySQL이 인덱스 검색보다 전체 테이블 검색이 더 낫다고
+# 판단할 경우(대부분의 행을 모두 조회하는 경우) 테이블을 차례로 읽는 것이 효율적
+
+# 인원수의 2배를 하면 14명 이상이 되는 회원의 이름과 인원수 조회
+select mem_name, mem_number
+	from member
+    where mem_number * 2 >= 14;
+    
+# where문에서 열에 연산을 가할 경우 인덱스 사용 X
+select mem_name, mem_number
+	from member
+    where mem_number >= 14/2;
+
+# 인덱스 제거
+# drop index 인덱스명 on 테이블명;
+show index from member; -- 인덱스명 확인
+
+drop index idx_member_mem_name on member;
+drop index idx_member_addr on member;
+
+# PK, FK로 지정되어 자동으로 생성된 인덱스의 경우
+# alter table문으로만 제거 가능
+
+alter table member
+	drop primary key;
+
+# 테이블의 외래키 이름 확인
+select table_name, constraint_name
+	from information_schema.referential_constraints
+	where constraint_schema = 'market_db';
+    
+# 외래키 이름: buy_ibfk_1
+
+alter table buy
+	drop foreign key buy_ibfk_1;
+    
+alter table member
+	drop primary key;
+    
+show index from member; 
