@@ -7,6 +7,8 @@ birth_date: 직원의 생년월일
 first_name: 직원의 이름
 last_name: 직원의 성
 gender: 직원의 성별 (M 또는 F).
+-- enum타입: 열거형 타입(문자열 값 중에서 선택하도록 제한)
+-- gender enum('M', 'F')
 hire_date: 직원이 고용된 날짜
 
 departments 테이블:
